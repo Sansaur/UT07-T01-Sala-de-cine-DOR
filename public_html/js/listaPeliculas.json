@@ -1,0 +1,37 @@
+{
+    "Call me by your name": {
+        "Imagen":"https://images-na.ssl-images-amazon.com/images/M/MV5BNDk3NTEwNjc0MV5BMl5BanBnXkFtZTgwNzYxNTMwMzI@._V1_SX150_CR0,0,150,150_.jpg",
+        "Sinopsis":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
+        "Disponibilidad":"16:00-20:00",
+        "Precio":"40",
+        "sillasCogidas":[21,43,54,65,78,96]
+    },
+    "El instante más oscuro":{
+        "Imagen":"https://images-na.ssl-images-amazon.com/images/M/MV5BNTU4MjMwOTgyMV5BMl5BanBnXkFtZTgwODQzNjY2NDM@._V1_SX150_CR0,0,150,150_.jpg",
+        "Sinopsis":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
+        "Disponibilidad":"12:00-20:00",
+        "Precio":"40",
+        "sillasCogidas":[21,43,54,22,35,31,65,78,96]
+    },
+    "Dunkirk": {
+        "Imagen":"https://images-na.ssl-images-amazon.com/images/M/MV5BN2YyZjQ0NTEtNzU5MS00NGZkLTg0MTEtYzJmMWY3MWRhZjM2XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_SX150_CR0,0,150,150_.jpg",
+        "Sinopsis":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
+        "Disponibilidad":"16:00-18:00",
+        "Precio":"40",
+        "sillasCogidas":[11,12,21,43,54,22,35,31,65,78,96]
+    },
+    "Lady Bird": {
+        "Imagen":"https://images-na.ssl-images-amazon.com/images/M/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX150_CR0,0,150,150_.jpg",
+        "Sinopsis":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
+        "Disponibilidad":"11:00-18:00",
+        "Precio":"40",
+        "sillasCogidas":[2,11,12,21,43,54,22,35,31,65,57,78,96]
+    },
+    "La forma del agua": {
+        "Imagen":"https://images-na.ssl-images-amazon.com/images/M/MV5BNGNiNWQ5M2MtNGI0OC00MDA2LWI5NzEtMmZiYjVjMDEyOWYzXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SX150_CR0,0,150,150_.jpg",
+        "Sinopsis":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
+        "Disponibilidad":"17:00-20:00",
+        "Precio":"40",
+        "sillasCogidas":[2,4,6,7,11,12,16,20,21,25,26,27,29,30,32,35,37,38,40,42,43,54,57,59,66,67,68,69,71,78,86,99]
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloPaginaCompras.css">
+        <script src="js/jquery-1.12.4.js"></script>
+        <script>
+            function cogerTodosParametros() {
+                var array = [];
+                location.search
+                        .substr(1)
+                        .split("&")
+                        .forEach(function (item) {
+                            tmp = item.split("=");
+                            array[tmp[0]] = decodeURIComponent(tmp[1]);
+                        });
+                return array;
+            }
+            $('document').ready(function () {
+                var a = cogerTodosParametros();
+                $('#informacionReserva').append('<p><strong>Reservando un asiento para:</strong> ' + a["Titulo"] + '</p>');
+                $('#informacionReserva').append('<p><strong>Disponible entre:</strong> ' + a["Disponibilidad"] + '</p>');
+                $('#informacionReserva').append('<p><strong>Silla elegida:</strong> ' + a["SillaCogida"] + '</p>');
+                $('#informacionReserva').append('<p><strong>Precio:</strong> ' + a["Precio"] + '.00€</p>');
+
+                var d1 = a["Disponibilidad"].split("-");
+                var diferencia = Math.abs(parseInt(d1[0].split(":")[0]) - parseInt(d1[1].split(":")[0]));
+                
+                for (var i = 0; i < diferencia; i++) {
+                    let primeraParte = parseInt(d1[0].split(":")[0]);
+                    let segundaParte = d1[0].split(":")[1];
+                    var hora = primeraParte+i+":"+segundaParte+" - "+parseInt(primeraParte+i+1)+":"+segundaParte;
+                    console.log(hora);
+                    $('#horaElegir').append("<option>Sesión " + (i + 1) + " ("+hora+")</option>");
+                }
+                $('#botonFinal').prop('disabled', 'true');
+                $('#checkboxUnlock').click(function () {
+                    if ($('#checkboxUnlock').prop('checked')) {
+                        $('#botonFinal').removeProp('disabled');
+                        $('#botonFinal').click(function () {
+                            var getLC = localStorage.getItem('reservasPeliculasArmando') ? JSON.parse(localStorage.getItem('reservasPeliculasArmando')) : [];
+                            var nuevaReserva = {"Titulo": a["Titulo"], "Sesion": "Sesion " + $('#horaElegir').val(), "Asiento": a['SillaCogida']};
+                            getLC.push(nuevaReserva);
+                            localStorage.setItem('reservasPeliculasArmando', JSON.stringify(getLC));
+                            location.replace('index.html');
+                        });
+                    } else {
+                        $('#botonFinal').prop('disabled', 'true');
+                        $('#botonFinal').click(function () {
+                            return;
+                        });
+                    }
+                })
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <form>
+                <h1>
+                    Página de pagos<small>Prepárate para soltar la pasta, tío</small>
+                </h1>
+                <div id="informacionReserva" class="form-group">
+                </div>
+                <div class="form-group">
+                    <input id="email" type="text" required="required"/>
+                    <label for="input" class="control-label"><strong>E-mail</strong></label><i class="bar"></i>
+                </div>
+                <div class="form-group">
+                    <input id="telefono" type="text" required="required"/>
+                    <label for="input" class="control-label"><strong>Teléfono</strong></label><i class="bar"></i>
+                </div>
+                <div id="parametrosReserva" class="form-group">
+                    <label for="horaElegir">
+                        Elige a que sesión ir
+                    </label><hr />
+                    <select id="horaElegir"></select>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input id="checkboxUnlock" type="checkbox"/><i class="helper"></i>He leido los Términos de Acuerdo y Licencia
+                    </label>
+                </div>
+            </form>
+            <div class="button-container">
+                <button id="botonFinal" type="button" class="button"><span>Confirmar el pago y almacenar en un JSON</span></button>
+            </div>
+        </div>
+    </body>
+</html>

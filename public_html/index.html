@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+    Los asientos les daré IDs numéricas
+    Del 1 al 100
+
+    Ponerle una forma chunga a los asientos.
+    
+-->
+<html lang="es">
+    <head>
+        <title>Pagina de reserva de peliculas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="css/estiloGeneral.css">
+        <script src="js/jquery-1.12.4.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/dibujoSVG.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <header><img style="transform: rotateY(180deg)" width="70" height="70" src="img/tickets.svg" alt="logo"><h1>Reservoir</h1><img width="70" height="70" src="img/tickets.svg" alt="logo"></header>
+        <div id="procesamiento">
+            <img style="width:95%;height:95%" alt="procesando" src="img/Wedges-2.5s-68px.svg">
+        </div>
+        <div id="contenedorTotal">
+            <nav>
+                <div tabindex=0 aria-label="Lista de películas" class="pasoCompra">Lista de películas</div>
+                <div tabindex=0 aria-label="Elección de película" class="pasoCompra">Elección de película</div>
+                <div tabindex=0 aria-label="Elección de reserva" class="pasoCompra">Elección de reserva</div>
+                <div tabindex=0 aria-label="Pago" class="pasoCompra">Pago</div>
+                <div class="simboloCompra"><svg width="32" height="32"> <rect class="rectPaso" width="32" height="32" style="fill:red;stroke-width:1;stroke:rgb(0,0,0)" /></svg></div>
+                <div class="simboloCompra"><svg width="32" height="32"> <rect class="rectPaso" width="32" height="32" style="fill:white;stroke-width:1;stroke:rgb(0,0,0)" /></svg></div>
+                <div class="simboloCompra"><svg width="32" height="32"> <rect class="rectPaso" width="32" height="32" style="fill:white;stroke-width:1;stroke:rgb(0,0,0)" /></svg></div>
+                <div class="simboloCompra"><svg width="32" height="32"> <rect class="rectPaso" width="32" height="32" style="fill:white;stroke-width:1;stroke:rgb(0,0,0)" /></svg></div>
+            </nav>
+            <div id="listaPeliculas">
+            </div>
+            <div id="detallePeliculas">
+
+            </div>
+            <div id="listaAsientos">
+                <div style="display:flex;"><button style="flex-grow:1;font-size: 1.5em;" id="vuelta">Volver a los detalles de la película</button></div>
+                <h1>Elija un asiento que reservar</h1>
+                <div id="controlesSVG">
+                    <button aria-label="Quitar zoom" onclick="tam(10)">-10</button>
+                    <button aria-label="Hacer zoom" onclick="tam(-10)">+10</button>
+                    <button aria-label="Quitar mucho zoom" onclick="tam(30)">-30</button>
+                    <button aria-label="Hacer mucho zoom" onclick="tam(-30)">+30</button>
+                    <button aria-label="Mover el panel hacia arriba" onclick="move(25, 1)">↑</button>
+                    <button aria-label="Mover el panel hacia abajo" onclick="move(25, 2)">↓</button>
+                    <button aria-label="Mover el panel hacia la izquierda" onclick="move(25, 3)">←</button>
+                    <button aria-label="Mover el panel hacia la derecha" onclick="move(25, 4)">→</button>
+                </div>
+                <div id="legenda">
+                    <span tabindex=0 aria-label="El color marrón representa los pasillos"><svg width="14" height="14"> <rect width="14" height="14" style="fill:brown;stroke-width:1;stroke:rgb(0,0,0)" /></svg><span>Pasillos</span></span>
+                    <span tabindex=0 aria-label="El color amarillo representa las salidas de emergencia"><svg width="14" height="14"> <rect width="14" height="14" style="fill:yellow;stroke-width:1;stroke:rgb(0,0,0)" /></svg><span>Salidas de emergencia</span></span>
+                    <span tabindex=0 aria-label="El color rojo representa los asientos ocupados"><svg width="14" height="14"> <rect width="14" height="14" style="fill:red;stroke-width:1;stroke:rgb(0,0,0)" /></svg><span>Asiento ocupado</span></span>
+                    <span tabindex=0 aria-label="El color verde representa la entrada"><svg width="14" height="14"> <rect width="14" height="14" style="fill:green;stroke-width:1;stroke:rgb(0,0,0)" /></svg><span>Entrada</span></span>
+                    <span tabindex=0 aria-label="El color blanco representa los asientos libres"><svg width="14" height="14"> <rect width="14" height="14" style="fill:white;stroke-width:1;stroke:rgb(0,0,0)" /></svg><span>Asiento disponible</span></span>
+                </div>
+                <div id="reservas">
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="licenciaArriba">
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                    <img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+                </a>
+                <span id="botonCerrar">X</span>
+            </div>
+            <div class="licenciaAbajo">
+                <p>
+                    Este obra está bajo una 
+                    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                        licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+                Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+            </div>
+    </footer>
+</body>
+</html>
